@@ -26,10 +26,10 @@ def get_entrypoint():
         return '../Resources/gui/index.html'
 
     # Using vite build
-    if exists('./gui/index.html'):  # pyinstaller
+    if exists('./gui/index.html'):  # frozen pyinstaller
         return './gui/index.html'
 
-    if exists('../gui/index.html'):  # pyinstaller dev mode
+    if exists('../gui/index.html'):  # dev mode
         return '../gui/index.html'
 
     raise Exception('No entry point for front end found')
