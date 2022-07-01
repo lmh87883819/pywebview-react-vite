@@ -78,7 +78,7 @@
     "import/resolver": {
       "eslint-import-resolver-custom-alias": {
         "alias": {
-          "~": "./src"
+          "~": "./client"
         },
         "extensions": [
           ".js",

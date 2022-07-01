@@ -8,11 +8,11 @@ const r = (path) => resolve(__dirname, path);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: r('src'),
+  root: r('client'),
   base: '',
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, './src'),
+      '~': path.resolve(__dirname, './client'),
     },
   },
   build: {
@@ -20,7 +20,7 @@ export default defineConfig({
     outDir: r('gui'),
     rollupOptions: {
       input: {
-        index: r('src/index.html'),
+        index: r('client/index.html'),
       },
     },
   },

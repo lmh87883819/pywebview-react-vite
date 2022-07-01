@@ -17,7 +17,8 @@ export const Box = styled.div`
 const App = () => {
   return (
     <Box>
-      <span>Hello</span>
+      <button onClick={() => window.pywebview.api.toogle_fullscreen()}>Toggle fullscreen</button>
+      <button onClick={() => window.pywebview.api.open_file_dialog(window)}>Toggle fullscreen</button>
     </Box>
   );
 };
