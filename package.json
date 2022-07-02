@@ -5,6 +5,7 @@
     "frontend:dev": "vite",
     "frontend:build": "vite build",
     "frontend:serve": "vite preview",
+    "file:server" : ".\\venv\\Scripts\\python backend/devFileServer.py",
     "start": "concurrently \"npm run frontend:dev\" \".\\venv\\Scripts\\python backend/index.py\"",
     "build:windows": ".\\venv\\Scripts\\pyinstaller build-windows.spec",
     "pack": "npm run frontend:build && npm run build:windows"
