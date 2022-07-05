@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useState } from 'react';
 import tw, { styled } from 'twin.macro';
 import { file } from './util/filePathPort';
@@ -18,12 +19,12 @@ export const Box = styled.div`
 `;
 
 const App = () => {
-  const [image, setImage] = useState();
+  const [video, setVideo] = useState();
 
   const openFile = async () => {
     const results = await window.pywebview.api.save_content();
     if(results?.length > 0) {
-      setImage(results[0]);
+      setVideo(results[0]);
     }
   };
 
@@ -32,11 +33,11 @@ const App = () => {
       <button onClick={() => window.pywebview.api.toogle_fullscreen()}>Toggle fullscreen</button>
       <button onClick={openFile}>Choose Image File</button>
       {
-        image && (
-        <img
-          width={500}
-          src={file(image)}
-          alt="Beautiful thagewgaew"
+        video && (
+        <video
+          width="500"
+          controls
+          src={file(video)}
         />
         )
       }

@@ -26,7 +26,7 @@ class DevFileServer:
             path = os.path.abspath(decoded_url)
             mime_type = mimetypes.guess_type(path)[0]
 
-            return send_file(open(path, "rb"), mimetype=mime_type)
+            return send_file(open(path, "rb"), mimetype=mime_type, conditional=True)
 
         app.run()
 
@@ -35,3 +35,5 @@ class DevFileServer:
 # On production pywebview will use http_server to host local file on random port
 devFileServer = DevFileServer()
 devFileServer.startDevFileServer()
+
+
