@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import { resolve } from 'path';
+import * as url from 'url';
 
-const { resolve } = require('path');
-
-const r = (path) => resolve(__dirname, path);
+const dirname = url.fileURLToPath(new URL('.', import.meta.url));
+const r = (path) => resolve(dirname, path);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
   base: '',
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, './client'),
+      '~': r('client'),
     },
   },
   build: {
